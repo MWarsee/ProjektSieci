@@ -8,8 +8,7 @@ namespace Projekt_sieci
     public class InformacjeSieciowe: INotifyPropertyChanged , IDataPointProvider
     {
         DateTime date;
-        double download;
-        double upload;
+        double dane;
         public DateTime Date {
             get { return date; }
             set 
@@ -17,34 +16,25 @@ namespace Projekt_sieci
                 date = value;
                 OnPropertyChanged(nameof(date));        
             } }
-        public double Download 
+        
+        public double Dane
         {
-            get { return download; }
+            get { return dane; }
             set
             {
-                download = value;
-                OnPropertyChanged(nameof(download));
+                dane = value;
+                OnPropertyChanged(nameof(dane));
             }
         }
-        public double Upload 
-        {
-            get { return upload; }
-            set
-            {
-                upload = value;
-                OnPropertyChanged(nameof(upload));
-            }
-        }
-        public InformacjeSieciowe(double download,double upload) 
+        public InformacjeSieciowe(double dane) 
         {
             this.Date = DateTime.Now;
-            this.Download = download;
-            this.Upload = upload;
+            this.dane = dane;
         }
         public InformacjeSieciowe() { }
-        public (DateTime , double, double ) getInformacje()
+        public (DateTime , double) getInformacje()
         {
-            return (date, download, upload);
+            return (date, dane);
         }
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
@@ -54,11 +44,7 @@ namespace Projekt_sieci
 
         public DataPoint GetDataPoint()
         {
-            return new DataPoint(DateTimeAxis.ToDouble(date), Download);
-        }
-        public DataPoint GetDataPoint2()
-        {
-            return new DataPoint(DateTimeAxis.ToDouble(date), Upload);
+            return new DataPoint(DateTimeAxis.ToDouble(date), dane);
         }
     }
 }

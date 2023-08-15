@@ -1,0 +1,17 @@
+﻿<Window x:Class="Projekt_sieci.OknoWyburuProcesu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt_sieci"
+        mc:Ignorable="d"
+        Title="OknoWyburuProcesu" Height="156" Width="339">
+    <StackPanel VerticalAlignment="Bottom">
+
+        <ComboBox x:Name="cbProcesy" Margin="20 0 20 10" FontSize="16"  />
+
+        <DockPanel HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button x:Name="OK" Content="OK" Margin="25" FontSize="16" Click="OK_Click"/>
+        </DockPanel>
+    </StackPanel>
+</Window>
